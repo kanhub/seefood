@@ -1,16 +1,17 @@
 import React from "react";
 import { Typography } from "antd";
+import "../Welcome/Welcome.css";
 
 const { Title } = Typography;
 const sampleSearch = "Taco";
 
-const Navigation = () => {
+const Welcome = () => {
   return (
-    <div style={{ paddingTop: "30px" }}>
+    <div id="welcome">
       <Title level={2}>👋 Welcome, Kanisk!</Title>
       <Title level={5}>You recently searched for {sampleSearch}</Title>
     </div>
   );
 };
 
-export default Navigation;
+export default Welcome;

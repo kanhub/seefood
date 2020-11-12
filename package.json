@@ -1,5 +1,13 @@
 {
   "name": "seefood",
+  "author": "Kanisk Chakraborty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kanhub/seefood"
+  },
+  "bugs": {
+    "url": "https://github.com/kanhub/seefood/issues"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +15,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.8.2",
+    "clarifai": "^2.9.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-particles-js": "^3.4.1",
