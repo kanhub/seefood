@@ -2,6 +2,8 @@
 
 The Seefood app Erlich Bachman wanted Jian Yang to make.
 
+You can visit the standalone client side app without any back-end logic, routing, etc. here: https://seefood.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
