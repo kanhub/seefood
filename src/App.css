@@ -12,3 +12,31 @@
   left: 0;
   z-index: -1;
 }
+
+#signin-container,
+#register-container,
+#about-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 7em;
+  margin-bottom: 1em;
+}
+
+.login {
+  max-width: 300px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+}

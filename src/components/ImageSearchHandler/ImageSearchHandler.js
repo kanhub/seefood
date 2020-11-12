@@ -27,7 +27,6 @@ const ImageLinkForm = () => {
       app.models.predict(Clarifai.FOOD_MODEL, imgUrl).then(
         (resp) => {
           let conceptData = resp.outputs[0].data.concepts;
-          console.log(conceptData);
           setImgData([...conceptData]);
         },
         (err) => {
