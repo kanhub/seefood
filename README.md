@@ -2,7 +2,9 @@
 
 The Seefood app Erlich Bachman wanted Jian Yang to make.
 
-You can visit the standalone client side app without any back-end logic, routing, etc. here: https://seefood.netlify.app/
+Built using CRA with React hooks. You can visit the standalone client side app without any back-end logic, routing, authentication/authorization etc. [here](https://seefood.netlify.app/)
+
+Click log-in to access what would be a protected route where users can perform searches, and simply copy paste any image of food items.
 
 ## Available Scripts
 
