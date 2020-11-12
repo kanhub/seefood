@@ -24,15 +24,13 @@ const ImageLinkForm = () => {
 
   const search = useCallback(() => {
     if (imgUrl !== "") {
-      app.models.predict(Clarifai.FOOD_MODEL, imgUrl).then(
-        (resp) => {
+      app.models
+        .predict(Clarifai.FOOD_MODEL, imgUrl)
+        .then((resp) => {
           let conceptData = resp.outputs[0].data.concepts;
           setImgData([...conceptData]);
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+        })
+        .catch((err) => console.log(err));
     }
   }, [imgUrl]);
 
