@@ -27,18 +27,10 @@ const FoodRecognition = ({ imgUrl, imgData }) => {
       };
     });
 
-    const itemSearched = dataSource[0].name;
-    delete dataSource[0];
-
     return (
       <>
         <Col xs={12}>
-          <Card
-            className="card"
-            title={
-              <Title level={5}>{`You searched for ${itemSearched}`}</Title>
-            }
-          >
+          <Card className="card" title={<Title level={5}>Image</Title>}>
             <Image width="100%" height="auto" src={imgUrl} />
           </Card>
         </Col>
