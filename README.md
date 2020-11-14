@@ -2,9 +2,11 @@
 
 The Seefood app Erlich Bachman wanted Jian Yang to make.
 
-Built using CRA with React hooks. You can visit the standalone client side app without any back-end logic, routing, authentication/authorization etc. [here](https://seefood.netlify.app/)
+Built using CRA w/ React hooks and the Ant Design UI library. You can visit the standalone client side app without any back-end logic, routing, authentication/authorization etc. [here](https://seefood.netlify.app/)
 
-Click log-in to access what would be a protected route where users can perform searches, and simply copy paste any image of food items.
+Click log-in without passing any fields to access what would be a protected route where users can perform searches and have access to WIP functionalities.
+
+To use, simply copy paste any image of food items like [this](https://cdn.psychologytoday.com/sites/default/files/field_blog_entry_images/2019-06/howcuttingdo.jpg), for instance, and hit search to see a breakdown of what it could be made up of!
 
 ## Available Scripts
 
