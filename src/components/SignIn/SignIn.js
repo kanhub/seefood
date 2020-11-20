@@ -7,6 +7,20 @@ const { Link, Title } = Typography;
 const SignIn = ({ onRouteChange }) => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    fetch("http://localhost:3000/signin", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: values.username,
+        password: values.password,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data === "success") {
+          onRouteChange("home");
+        }
+      });
   };
 
   return (
@@ -30,7 +44,7 @@ const SignIn = ({ onRouteChange }) => {
           >
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
+              placeholder="E-mail"
             />
           </Form.Item>
           <Form.Item
@@ -63,7 +77,6 @@ const SignIn = ({ onRouteChange }) => {
               type="primary"
               htmlType="submit"
               className="login-form-button"
-              onClick={() => onRouteChange("home")}
             >
               Log in
             </Button>

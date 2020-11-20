@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Particles from "react-particles-js";
 import Logo from "./components/Logo/Logo";
@@ -14,6 +14,12 @@ import "./App.css";
 const App = () => {
   const [route, setRoute] = useState("signin");
   const [isSignedIn, setIsSignedIn] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:3000")
+      .then((res) => res.json())
+      .then(console.log);
+  });
 
   const onRouteChange = (aRoute) => {
     if (aRoute === "home") {
