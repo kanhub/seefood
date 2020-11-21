@@ -37,12 +37,7 @@ const ImageLinkForm = ({ user, setUser }) => {
             })
               .then((resp) => resp.json())
               .then((count) => {
-                setUser({
-                  ...user,
-                  user: {
-                    entries: count,
-                  },
-                });
+                setUser({ ...user, entries: count });
               });
           }
           let conceptData = resp.outputs[0].data.concepts;
@@ -63,7 +58,6 @@ const ImageLinkForm = ({ user, setUser }) => {
           >
             <Search
               style={{ width: "80%" }}
-              allowClear
               size="large"
               align="middle"
               placeholder="Link to your image"
