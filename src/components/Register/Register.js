@@ -4,9 +4,25 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 const { Title } = Typography;
 
-const Register = ({ onRouteChange }) => {
+const Register = ({ setUser, onRouteChange }) => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    fetch("http://localhost:3000/register", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: values.email,
+        password: values.password,
+        name: values.name,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((user) => {
+        if (user) {
+          setUser(user);
+          onRouteChange("home");
+        }
+      });
   };
 
   return (
@@ -20,17 +36,18 @@ const Register = ({ onRouteChange }) => {
           onFinish={onFinish}
         >
           <Form.Item
-            name="username"
+            name="email"
             rules={[
               {
                 required: true,
-                message: "Please input your Username!",
+                message: "Please input your E-mail!",
               },
             ]}
           >
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
+              type="email"
+              placeholder="Email"
             />
           </Form.Item>
           <Form.Item
@@ -68,7 +85,6 @@ const Register = ({ onRouteChange }) => {
               type="primary"
               htmlType="submit"
               className="login-form-button"
-              onClick={() => onRouteChange("home")}
             >
               Register
             </Button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Particles from "react-particles-js";
 import Logo from "./components/Logo/Logo";
@@ -14,12 +14,7 @@ import "./App.css";
 const App = () => {
   const [route, setRoute] = useState("signin");
   const [isSignedIn, setIsSignedIn] = useState(false);
-
-  useEffect(() => {
-    fetch("http://localhost:3000")
-      .then((res) => res.json())
-      .then(console.log);
-  });
+  const [user, setUser] = useState();
 
   const onRouteChange = (aRoute) => {
     if (aRoute === "home") {
@@ -41,13 +36,13 @@ const App = () => {
       {route === "home" ? (
         <>
           <Logo />
-          <Welcome />
-          <ImageSearchHandler />
+          <Welcome user={user} />
+          <ImageSearchHandler user={user} setUser={setUser} />
         </>
       ) : route === "signin" || route === "signout" ? (
         <>
           <Logo />
-          <SignIn onRouteChange={onRouteChange} />
+          <SignIn setUser={setUser} onRouteChange={onRouteChange} />
         </>
       ) : route === "about" ? (
         <>
@@ -57,7 +52,7 @@ const App = () => {
       ) : (
         <>
           <Logo />
-          <Register onRouteChange={onRouteChange} />
+          <Register setUser={setUser} onRouteChange={onRouteChange} />
         </>
       )}
       <Footer />

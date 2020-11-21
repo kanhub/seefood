@@ -11,7 +11,7 @@ const app = new Clarifai.App({
   apiKey: process.env.REACT_APP_CLARIFAI_API_KEY,
 });
 
-const ImageLinkForm = () => {
+const ImageLinkForm = ({ user, setUser }) => {
   const [imgUrl, setImgUrl] = useState("");
   const [imgData, setImgData] = useState([]);
   const { current: url } = useRef(imgUrl);
@@ -27,12 +27,30 @@ const ImageLinkForm = () => {
       app.models
         .predict(Clarifai.FOOD_MODEL, imgUrl)
         .then((resp) => {
+          if (resp) {
+            fetch("http://localhost:3000/image", {
+              method: "put",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                id: user.id,
+              }),
+            })
+              .then((resp) => resp.json())
+              .then((count) => {
+                setUser({
+                  ...user,
+                  user: {
+                    entries: count,
+                  },
+                });
+              });
+          }
           let conceptData = resp.outputs[0].data.concepts;
           setImgData([...conceptData]);
         })
         .catch((err) => console.log(err));
     }
-  }, [imgUrl]);
+  }, [imgUrl, user, setUser]);
 
   return (
     <>

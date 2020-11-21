@@ -4,9 +4,8 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 const { Link, Title } = Typography;
 
-const SignIn = ({ onRouteChange }) => {
+const SignIn = ({ setUser, onRouteChange }) => {
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
     fetch("http://localhost:3000/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -16,8 +15,9 @@ const SignIn = ({ onRouteChange }) => {
       }),
     })
       .then((resp) => resp.json())
-      .then((data) => {
-        if (data === "success") {
+      .then((user) => {
+        if (user.id) {
+          setUser(user);
           onRouteChange("home");
         }
       });

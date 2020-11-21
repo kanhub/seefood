@@ -3,13 +3,13 @@ import { Typography } from "antd";
 import "../Welcome/Welcome.css";
 
 const { Title } = Typography;
-const sampleSearch = "Taco";
 
-const Welcome = () => {
+const Welcome = ({ user }) => {
+  const { name, entries } = user;
   return (
     <div id="welcome">
-      <Title level={2}>👋 Welcome, Kanisk!</Title>
-      <Title level={5}>You recently searched for {sampleSearch}</Title>
+      <Title level={2}>👋 Welcome, {name}!</Title>
+      <Title level={5}>You have {entries} searches</Title>
     </div>
   );
 };
