@@ -30,15 +30,15 @@ const FoodRecognition = ({ imgUrl, imgData }) => {
     return (
       <>
         <Col xs={12}>
-          <Card className="card" title={<Title level={5}>Image</Title>}>
+          <Card
+            className="card"
+            title={<Title level={5}>Your Food Image</Title>}
+          >
             <Image width="100%" height="auto" src={imgUrl} />
           </Card>
         </Col>
         <Col xs={12}>
-          <Card
-            className="card"
-            title={<Title level={5}>It's made of...</Title>}
-          >
+          <Card className="card" title={<Title level={5}>Is made of...</Title>}>
             <Table dataSource={dataSource} columns={columns}></Table>
           </Card>
         </Col>

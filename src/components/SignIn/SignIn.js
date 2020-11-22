@@ -20,7 +20,8 @@ const SignIn = ({ setUser, onRouteChange }) => {
           setUser(user);
           onRouteChange("home");
         }
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

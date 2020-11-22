@@ -9,7 +9,7 @@ const Welcome = ({ user }) => {
   return (
     <div id="welcome">
       <Title level={2}>👋 Welcome, {name}!</Title>
-      <Title level={5}>You have {entries} searches</Title>
+      <Title level={5}>You have searched {entries} recipies</Title>
     </div>
   );
 };
