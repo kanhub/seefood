@@ -6,8 +6,7 @@ const { Title } = Typography;
 
 const Register = ({ setUser, onRouteChange }) => {
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
-    fetch("http://localhost:3000/register", {
+    fetch("https://seefood-api-kan.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -18,9 +17,12 @@ const Register = ({ setUser, onRouteChange }) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        if (user) {
+        console.log(user);
+        if (user.id) {
           setUser(user);
           onRouteChange("home");
+        } else {
+          alert("Invalid form values.");
         }
       })
       .catch((err) => console.log(err));

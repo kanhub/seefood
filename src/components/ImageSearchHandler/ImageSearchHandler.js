@@ -2,14 +2,10 @@ import React, { useCallback, useState, useRef, useEffect } from "react";
 import { Typography, Row, Col, Input, Card } from "antd";
 import { FileImageFilled } from "@ant-design/icons";
 import "../ImageSearchHandler/ImageSearchHandler.css";
-import Clarifai from "clarifai";
 import FoodRecognition from "../FoodRecognition/FoodRecognition";
 
 const { Title } = Typography;
 const { Search } = Input;
-const app = new Clarifai.App({
-  apiKey: process.env.REACT_APP_CLARIFAI_API_KEY,
-});
 
 const ImageLinkForm = ({ user, setUser }) => {
   const [imgUrl, setImgUrl] = useState("");
@@ -24,11 +20,17 @@ const ImageLinkForm = ({ user, setUser }) => {
 
   const search = useCallback(() => {
     if (imgUrl !== "") {
-      app.models
-        .predict(Clarifai.FOOD_MODEL, imgUrl)
+      fetch("https://seefood-api-kan.herokuapp.com/imageurl", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          input: imgUrl,
+        }),
+      })
+        .then((resp) => resp.json())
         .then((resp) => {
           if (resp) {
-            fetch("http://localhost:3000/image", {
+            fetch("https://seefood-api-kan.herokuapp.com/image", {
               method: "put",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

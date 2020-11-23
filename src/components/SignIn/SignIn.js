@@ -6,7 +6,7 @@ const { Link, Title } = Typography;
 
 const SignIn = ({ setUser, onRouteChange }) => {
   const onFinish = (values) => {
-    fetch("http://localhost:3000/signin", {
+    fetch("https://seefood-api-kan.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -19,6 +19,8 @@ const SignIn = ({ setUser, onRouteChange }) => {
         if (user.id) {
           setUser(user);
           onRouteChange("home");
+        } else {
+          alert("Invalid credentials or User not registered.");
         }
       })
       .catch((err) => console.log(err));
