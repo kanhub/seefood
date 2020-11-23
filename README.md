@@ -1,36 +1,20 @@
 # Seefood
 
-The Seefood app Erlich Bachman wanted Jian Yang to make.
+The Seefood app Erlich Bachman wanted Jian Yang to make. You can visit the deployed app [here](https://seefood.netlify.app/). 
 
-Built using CRA w/ React hooks and the Ant Design UI library. You can visit the standalone client side app without any back-end logic, routing, authentication/authorization etc. [here](https://seefood.netlify.app/)
+Test credentials: 
+- email: john@gmail.com
+- password: test
 
-Click log-in without passing any fields to access what would be a protected route where users can perform searches and have access to WIP functionalities.
+#### Built using
 
-To use, simply copy paste any image of food items like [this](https://cdn.psychologytoday.com/sites/default/files/field_blog_entry_images/2019-06/howcuttingdo.jpg), for instance, and hit search to see a breakdown of what it could be made up of!
+- CRA w/ React hooks
+- Ant Design
 
-## Available Scripts
+#### Running Locally
 
-In the project directory, you can run:
+1. Clone the repo locally `npm install` all the dependencies.
+2. `yarn start` should start the client side with all routes pointing to the actual deployed backend for which the code can be found [here](https://github.com/kanhub/seefood-backend)
+3. To use, simply copy paste any image of food items like [this](https://cdn.psychologytoday.com/sites/default/files/field_blog_entry_images/2019-06/howcuttingdo.jpg), for instance, and hit search to see a breakdown of what it could be made up of!
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
