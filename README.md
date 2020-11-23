@@ -3,7 +3,7 @@
 The Seefood app Erlich Bachman wanted Jian Yang to make. You can visit the deployed app [here](https://seefood.netlify.app/). 
 
 Test credentials: 
-- email: john@gmail.com
+- email: `john@gmail.com`
 - password: test
 
 #### Built using
