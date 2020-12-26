@@ -1,21 +1,21 @@
-import React from "react";
-import { Typography, Card, List } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import React from 'react';
+import { Typography, Card, List } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 const { Text, Title } = Typography;
 
 const About = () => {
   const credentials = [
     {
-      email: "john@gmail.com",
-      password: "test",
+      email: 'john@gmail.com',
+      password: 'test',
     },
   ];
 
   return (
-    <div id="about-container">
-      <Card className="login" title={<Title level={3}>About</Title>}>
-        <Text>This is demo app built for fun!</Text>
+    <div id='about-container'>
+      <Card className='login' title={<Title level={3}>About</Title>}>
+        <Text>This is a demo app built for fun!</Text>
         <br />
         <br />
         <Text>
@@ -23,7 +23,7 @@ const About = () => {
           <br />
           <br />
           <List
-            itemLayout="horizontal"
+            itemLayout='horizontal'
             dataSource={credentials}
             renderItem={(item) => (
               <List.Item.Meta
