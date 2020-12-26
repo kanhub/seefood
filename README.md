@@ -11,6 +11,14 @@ Test credentials:
 - CRA w/ React hooks
 - Ant Design
 
+#### Sample Demo
+
+<p align="center">
+  <a href="https://github.com/chakrakan/seefood"><img src="https://github.com/kanhub/seefood/blob/main/docs/sample.png" width="900" alt="Seefood Demo" /></a>
+</p>
+
+
+
 #### Running Locally
 
 1. Clone the repo locally `npm install` all the dependencies.
